@@ -23,14 +23,13 @@ body {
 	height: 50px;
 	font-weight: 700;
 	padding: 0 10px;
-	color: #555;
+	color: #777;
 	background-color: #999;
 }
 
 .hdr:hover {
-	color:orange;
+	color:#444;
 	cursor: pointer;
-	/* filter: opacity(50%); */
 }
 
 .hdr h3 {
