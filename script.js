@@ -3,13 +3,11 @@ const accrdnItms = Array.from(accrdn.children);
 
 // add attributes to items of accordian
 (function setAttr() {
-	console.log('apply attributes');
-
+	
 	let a = 1;
 	let b = a;
 	let c = a;
 	let d = a;
-
 	// applies attributes to single div
 	accrdnItms.forEach((e) => {
 
@@ -33,14 +31,13 @@ const accrdnItms = Array.from(accrdn.children);
 		div.children[0].appendChild(spnTg);
 		div.children[0].lastChild.innerHTML = '&lsaquo;';
 		div.children[0].lastChild.classList.add('crt');
+
 	});
 
 })();
 
 // toggle body of accordion item
 function tggleBdy(itm) {
-	// console.log('toggle itm');
-
 	// get body of item
 	let bdy = itm.children[1];
 
@@ -49,9 +46,9 @@ function tggleBdy(itm) {
 
 	if (itm.classList.contains('active') && bdy.classList.contains('opened')) {
 		itm.classList.replace('active', 'standby');
+		itm.children[0].style.color = '#777';
 		itm.children[0].lastChild.style.transform = "rotate(0deg)";
 		bdy.classList.replace('opened', 'closed');
-
 		bdy.style.height = '0px';
 
 	} else {
@@ -61,6 +58,7 @@ function tggleBdy(itm) {
 			let bdy = div.children[1];
 			if (div.classList.contains('active') && bdy.classList.contains('opened')) {
 				div.classList.replace('active', 'standby');
+				div.children[0].style.color = '#777';
 				div.children[0].lastChild.style.transform = 'rotate(0deg)';
 				bdy.classList.replace('opened', 'closed');
 				bdy.style.height = '0px';
@@ -69,10 +67,10 @@ function tggleBdy(itm) {
 
 		// change classes of current selection
 		itm.classList.replace('standby', 'active');
+		itm.children[0].style.color = '#444';
 		itm.children[0].lastChild.style.transform = "rotate(-90deg)";
 		bdy.classList.replace('closed', 'opened');
 		bdy.style.height = `${bdyH}px`;
-
 	}
 
 }
